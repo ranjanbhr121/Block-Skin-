@@ -2,39 +2,70 @@
 <html>
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Block Skin - 15 Pack</title>
+<title>BlockSkins - 15 Skins 3D</title>
 <style>
 body{margin:0;background:#0e0e0e;color:#fff;font-family:sans-serif}
-header{background:#111;padding:20px;text-align:center;border-bottom:3px solid #55ff55}
+header{background:#111;padding:15px;text-align:center;border-bottom:3px solid #55ff55}
 h1{margin:0;color:#55ff55}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:15px;padding:20px;max-width:1100px;margin:auto}
-.card{background:#1e1e1e;padding:15px;text-align:center;border-radius:12px;border:1px solid #333}
-.card img{width:110px;height:110px;object-fit:contain;image-rendering:pixelated;background:#000;padding:10px;border-radius:10px}
-.card h4{margin:10px 0}
-.card button{background:#55ff55;border:none;padding:10px;width:100%;border-radius:6px;font-weight:bold;cursor:pointer}
+.card{background:#1e1e1e;padding:12px;text-align:center;border-radius:12px;border:1px solid #333}
+.card img{width:100px;height:100px;object-fit:contain;image-rendering:pixelated;background:#000;padding:8px;border-radius:8px}
+.card h4{margin:8px 0}
+.btn-view{background:#333;color:#fff;padding:6px;width:48%;border-radius:5px;border:none;cursor:pointer}
+.btn-down{background:#55ff55;color:#000;padding:6px;width:48%;border-radius:5px;border:none;cursor:pointer;font-weight:bold}
+#viewer{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:1000}
+#close{margin-top:15px;background:#fff;padding:10px 25px;border-radius:20px;border:none;font-weight:bold}
 </style>
+<script src="https://unpkg.com/skinview3d@3.0.0/bundles/skinview3d.bundle.js"></script>
 </head>
 <body>
-<header><h1>BOYS BEDROCK SKINS</h1><p>15 Skins Ready</p></header>
+<header><h1>BOYS BEDROCK SKINS</h1><p>skin01 to skin15 - 3D Preview</p></header>
 
 <div class="grid">
 
-<div class="card"><img src="./skin01.png"><h4>skin01</h4><a href="./skin01.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin02.png"><h4>skin02</h4><a href="./skin02.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin03.png"><h4>skin03</h4><a href="./skin03.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin04.png"><h4>skin04</h4><a href="./skin04.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin05.png"><h4>skin05</h4><a href="./skin05.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin06.png"><h4>skin06</h4><a href="./skin06.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin07.png"><h4>skin07</h4><a href="./skin07.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin08.png"><h4>skin08</h4><a href="./skin08.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin09.png"><h4>skin09</h4><a href="./skin09.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin10.png"><h4>skin10</h4><a href="./skin10.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin11.png"><h4>skin11</h4><a href="./skin11.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin12.png"><h4>skin12</h4><a href="./skin12.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin13.png"><h4>skin13</h4><a href="./skin13.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin14.png"><h4>skin14</h4><a href="./skin14.png" download><button>⬇️ Download</button></a></div>
-<div class="card"><img src="./skin15.png"><h4>skin15</h4><a href="./skin15.png" download><button>⬇️ Download</button></a></div>
+<div class="card"><img src="./skin01.png"><h4>skin01</h4><button class="btn-view" onclick="open3D('./skin01.png','skin01')">👁️ 3D</button> <a href="./skin01.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin02.png"><h4>skin02</h4><button class="btn-view" onclick="open3D('./skin02.png','skin02')">👁️ 3D</button> <a href="./skin02.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin03.png"><h4>skin03</h4><button class="btn-view" onclick="open3D('./skin03.png','skin03')">👁️ 3D</button> <a href="./skin03.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin04.png"><h4>skin04</h4><button class="btn-view" onclick="open3D('./skin04.png','skin04')">👁️ 3D</button> <a href="./skin04.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin05.png"><h4>skin05</h4><button class="btn-view" onclick="open3D('./skin05.png','skin05')">👁️ 3D</button> <a href="./skin05.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin06.png"><h4>skin06</h4><button class="btn-view" onclick="open3D('./skin06.png','skin06')">👁️ 3D</button> <a href="./skin06.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin07.png"><h4>skin07</h4><button class="btn-view" onclick="open3D('./skin07.png','skin07')">👁️ 3D</button> <a href="./skin07.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin08.png"><h4>skin08</h4><button class="btn-view" onclick="open3D('./skin08.png','skin08')">👁️ 3D</button> <a href="./skin08.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin09.png"><h4>skin09</h4><button class="btn-view" onclick="open3D('./skin09.png','skin09')">👁️ 3D</button> <a href="./skin09.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin10.png"><h4>skin10</h4><button class="btn-view" onclick="open3D('./skin10.png','skin10')">👁️ 3D</button> <a href="./skin10.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin11.png"><h4>skin11</h4><button class="btn-view" onclick="open3D('./skin11.png','skin11')">👁️ 3D</button> <a href="./skin11.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin12.png"><h4>skin12</h4><button class="btn-view" onclick="open3D('./skin12.png','skin12')">👁️ 3D</button> <a href="./skin12.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin13.png"><h4>skin13</h4><button class="btn-view" onclick="open3D('./skin13.png','skin13')">👁️ 3D</button> <a href="./skin13.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin14.png"><h4>skin14</h4><button class="btn-view" onclick="open3D('./skin14.png','skin14')">👁️ 3D</button> <a href="./skin14.png" download><button class="btn-down">⬇️</button></a></div>
+<div class="card"><img src="./skin15.png"><h4>skin15</h4><button class="btn-view" onclick="open3D('./skin15.png','skin15')">👁️ 3D</button> <a href="./skin15.png" download><button class="btn-down">⬇️</button></a></div>
 
 </div>
+
+<div id="viewer">
+  <canvas id="skin_container"></canvas>
+  <h2 id="skinName"></h2>
+  <div>
+    <a id="downloadLink" href="" download><button style="padding:10px 20px;background:#55ff55;border:none;border-radius:6px;font-weight:bold;">⬇️ Download This Skin</button></a>
+    <button id="close" onclick="document.getElementById('viewer').style.display='none'">❌ Close</button>
+  </div>
+</div>
+
+<script>
+let skinViewer;
+function open3D(url, name){
+  document.getElementById('viewer').style.display='flex';
+  document.getElementById('skinName').innerText = name;
+  document.getElementById('downloadLink').href = url;
+  if(!skinViewer){
+    skinViewer = new skinview3d.SkinViewer({
+      canvas: document.getElementById("skin_container"),
+      width: 300, height: 400, skin: url
+    });
+    skinViewer.animation = new skinview3d.WalkingAnimation();
+  } else {
+    skinViewer.loadSkin(url);
+  }
+}
+</script>
 </body>
-</html>
+  </html>
